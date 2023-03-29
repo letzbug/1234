@@ -5,9 +5,9 @@
     <script>
         function sendToChatGPT() {
             // Text, den der Benutzer eingegeben hat, aus dem Input-Feld lesen
-            var question = prompt("Type your message to the Monster:");
+            var question = prompt("Posez votre question à Kevin:");
             // Zeige die Eingabe des Benutzers an
-            document.getElementById("question").innerHTML = "You asked: " + question;
+            document.getElementById("question").innerHTML = "Vous avez demandé: " + question;
             // Anfrage an den ChatGPT-Endpoint senden
             fetch("https://api.openai.com/v1/engine/davinci-codex/completions", {
                 method: "POST",
@@ -26,7 +26,7 @@
             .then(response => response.json())
             .then(data => {
                 // Antwort des ChatGPT anzeigen
-                document.getElementById("output").innerHTML = "Monster says: " + data.choices[0].text;
+                document.getElementById("output").innerHTML = "d'après Kevin: " + data.choices[0].text;
             })
             .catch(error => console.error(error));
         }
